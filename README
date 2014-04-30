@@ -1,0 +1,24 @@
+Staging/Unstaging
+Commits/Edits
+Push/Pull/Fetch
+Branches/Branch deletion
+Stashing
+Submodules
+Conflict Resolution
+Merges & mergetool
+Reverts
+Patches
+Rebase (I've actually never done this)
+Forks
+Pull Requests
+Hooks
+
+Ideas
+=====
+
+Python Scripts for validation?
+http://try.git.com
+https://www.atlassian.com/git/tutorial/git-basics
+http://git-scm.com/docs/gittutorial
+http://www.vogella.com/tutorials/Git/article.html
+
