@@ -38,3 +38,45 @@ Initial commit
 
 nothing to commit (create/copy files and use "git add" to track)
 ```
+
+## Adding Content & Committing
+
+Now that we can get `git` to tell us the status of the repository, lets create
+some content for git to keep track of.
+
+```
+echo "foo" > foo.txt
+echo "bar" > bar.txt
+```
+
+Lets check how adding these files change the status of the repository. So again
+run `git status`
+
+```
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    bar.txt
+    foo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+now run `git add .`
+
+```
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+    new file:   bar.txt
+    new file:   foo.txt
+
+```
