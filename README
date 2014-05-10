@@ -2,16 +2,19 @@ Staging/Unstaging
 Commits/Edits
 Push/Pull/Fetch
 Branches/Branch deletion
-Stashing
-Submodules
-Conflict Resolution
+
 Merges & mergetool
 Reverts
 Patches
-Rebase (I've actually never done this)
+Stashing
+
+
+Submodules
+Hooks
+Rebase
+
 Forks
 Pull Requests
-Hooks
 
 Ideas
 =====
@@ -21,4 +24,3 @@ http://try.git.com
 https://www.atlassian.com/git/tutorial/git-basics
 http://git-scm.com/docs/gittutorial
 http://www.vogella.com/tutorials/Git/article.html
-
