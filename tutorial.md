@@ -120,8 +120,8 @@ nothing to commit, working directory clean
 ## Viewing History
 
 All version control systems including Git show a projects commit history. The
-`git log` command displays the commited snapshots, showing you your commit
-history. If you run `git log` you should see similar output:
+`git log` command displays the commited snapshots, showing your commit history.
+If you run `git log` you should see similar output:
 
 ```
 Author: Sean Jones <neuralsandwich@gmail.com>
@@ -130,7 +130,8 @@ Date:   Sat May 10 15:38:15 2014 +0100
     Initial commit
 ```
 
-Lets create some more commits so we can see how git log really works.
+Let's create some more commits so we can see what `git log` looks like when
+populated with more than one commit.
 
 ```
 echo "foobar" > foobar.txt
@@ -138,7 +139,50 @@ echo " is not bar" >> foo.txt
 echo " is not foo" >> bar.txt
 ```
 
-git add -p
+Instead of using `git add .`, use `git add -p` You should be prompted with output
+similar to this:
+
+```
+diff --git a/bar.txt b/bar.txt
+index 5716ca5..02626e7 100644
+--- a/bar.txt
++++ b/bar.txt
+@@ -1 +1,2 @@
+ bar
++ is not foo
+Stage this hunk [y,n,q,a,d,/,e,?]? 
+```
+
+Enter `y` and then `git commit -m "Add changes to foo & bar"`, finally do the
+following:
+
+```
+git add foobar.txt
+git commit -m "Add foobar.txt"
+git log
+```
+
+Hopefully, you should see similar output:
+
+```
+commit bff897c9d3d27cfee74516935500388b417f1c11
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:50:14 2014 +0100
+
+    Add foobar.txt
+
+commit 0c5275028bd818395de035aa1733a3f2889532e5
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:45:13 2014 +0100
+
+    Add changes to foo & bar
+
+commit 36a24afa1548fb767439f36e3e8bee8458f571ee
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:23:27 2014 +0100
+
+    Initial commit
+```
 
 git log, more history
 
@@ -172,18 +216,18 @@ git log <file>
 git log --graph --decorate --oneline
 ```
 
+## Removing, Reverting, Resetting & Cleaning
+
+
 Even more changes
 
 ```
 mkdir 
 touch
+git add
 ```
 
-## Removing, Reverting, Resetting & Cleaning
-
-```
-git rm --cached <file>
-```
+`git rm --cached <file>`
 
 ```
 git commit -m "Lots of changes going on here"
