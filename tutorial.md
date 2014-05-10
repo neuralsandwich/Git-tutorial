@@ -119,12 +119,9 @@ nothing to commit, working directory clean
 
 ## Viewing History
 
-The `git log` command displays committed snapshots. Showing you the projects
-history.
-
-`git log`
-
-output
+All version control systems including Git show a projects commit history. The
+`git log` command displays the commited snapshots, showing you your commit
+history. If you run `git log` you should see similar output:
 
 ```
 Author: Sean Jones <neuralsandwich@gmail.com>
