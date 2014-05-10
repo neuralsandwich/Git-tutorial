@@ -184,25 +184,24 @@ Date:   Sat May 10 22:23:27 2014 +0100
     Initial commit
 ```
 
-git log, more history
+This output is fairly simple to understand, every commit has a 40 character SHA1
+hash, which is a checksum for the commit and a unique ID. Running `git log
+--decorate` will show some extra output.
 
-This ID can be used in commands like git log <since>..<until> to refer to
-specific commits. For instance, git log 3157e..5ab91 will display everything
-between the commits with ID's 3157e and 5ab91. Aside from checksums, branch
-names (discussed in the Branch Module) and the HEAD keyword are other common
-methods for referring to individual commits. HEAD always refers to the current
-commit, be it a branch or a specific commit.
+```
+commit bff897c9d3d27cfee74516935500388b417f1c11 (HEAD, master)
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:50:14 2014 +0100
 
-The ~ character is useful for making relative references to the parent of a
-commit. For example, 3157e~1 refers to the commit before 3157e, and HEAD~3 is
-the great-grandparent of the current commit.
+    Add foobar.txt
+```
 
-The idea behind all of these identification methods is to let you perform
-actions based on specific commits. The git log command is typically the
-starting point for these interactions, as it lets you find the commits you want
-to work with.
+This extra output `(HEAD, master)` indicates that the latest commit `bff897c`
+is the current commit and that it is the tip of the master branch. You can use
+the `HEAD` reference and branch names with Git commands that require a commit
+id.
 
-Different git log formats
+Try some of the following commands, see the different output they produce:
 
 ```
 git log -n <limit>
@@ -214,10 +213,31 @@ git log --grep="<pattern>"
 git log <since>..<until>
 git log <file>
 git log --graph --decorate --oneline
+git log --graph --stat -p --decorate
 ```
+Using `git log <since>..<until>` command allows you to seen between the
+specified range. For example `git log HEAD~2..HEAD`:
+
+```
+commit bff897c9d3d27cfee74516935500388b417f1c11
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:50:14 2014 +0100
+
+    Add foobar.txt
+
+commit 0c5275028bd818395de035aa1733a3f2889532e5
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 22:45:13 2014 +0100
+
+    Add changes to foo & bar
+
+```
+The `~` character is used for referencing the relative parent of the specified
+commit. HEAD~1 being the commit previous to HEAD and bff897c~1 being 0c52750,
+the commit before bff897c. For more information about `git log` visit [here]
+(http://git-scm.com/docs/git-log)
 
 ## Removing, Reverting, Resetting & Cleaning
-
 
 Even more changes
 
