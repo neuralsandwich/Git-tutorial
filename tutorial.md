@@ -23,7 +23,7 @@ Initialized empty Git repository in .git/
 
 There are many projects with already use git ([github](http://github.com)) to
 work on any of these you need to clone the project. You can do this with the
-`git clone <url>` command but for now we will move on and come back to this.
+`git clone <url>` command but for now we will move on.
 
 ## Checking the Status
 
@@ -78,5 +78,21 @@ Changes to be committed:
 
     new file:   bar.txt
     new file:   foo.txt
+
+```
+
+Now that we have added our files with some content to the staging area we can go
+ahead and create out first commit.
+
+```
+git commit -m "Initial commit"
+```
+
+Now our changes that were in the staging area have been stored as a commit. If
+you run `git status` again you will see the following message.
+
+```
+On branch master
+nothing to commit, working directory clean
 
 ```
