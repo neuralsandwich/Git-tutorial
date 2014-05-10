@@ -1,5 +1,11 @@
 # Git Basics
 
+* [Creating Projects](#Creating a New Project)
+* [Checking Repository Status](#Checking the Status)
+* [Staging & Commiting](#Adding Content & Committing)
+* [History Log](#Viewing History)
+
+
 ## Creating a New Project
 
 To get started using `git` you need to initial a repository. To do this you will
