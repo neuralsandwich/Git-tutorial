@@ -55,8 +55,9 @@ echo "foo" > foo.txt
 echo "bar" > bar.txt
 ```
 
-Lets check how adding these files change the status of the repository. So again
-run `git status`
+By adding files to the working directory of the repository we have changes its
+status. Lets check how the change the status of the repository, run `git
+status` again
 
 ```
 On branch master
@@ -72,7 +73,12 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-now run `git add .`
+Currently the content of these two files are not tracked. To add them to the
+repository, you must add them to the staging area. To do that use `git add
+.`.
+
+To check what you just did run `git status` again. You should see the
+following output
 
 ```
 On branch master
@@ -87,8 +93,8 @@ Changes to be committed:
 
 ```
 
-Now that we have added our files with some content to the staging area we can go
-ahead and create out first commit.
+Now that we have added some changes to the staging area, we can go ahead and
+create your first commit.
 
 ```
 git commit -m "Initial commit"
@@ -104,6 +110,8 @@ nothing to commit, working directory clean
 ```
 
 ## Viewing History
+
+
 
 git log
 
