@@ -130,13 +130,12 @@ Date:   Sat May 10 15:38:15 2014 +0100
     Initial commit
 ```
 
-Make more changes
+Lets create some more commits so we can see how git log really works.
 
 ```
-touch
-echo
-touch
-echo
+echo "foobar" > foobar.txt
+echo " is not bar" >> foo.txt
+echo " is not foo" >> bar.txt
 ```
 
 git add -p
