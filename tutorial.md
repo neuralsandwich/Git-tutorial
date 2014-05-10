@@ -73,12 +73,15 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Currently the content of these two files are not tracked. To add them to the
-repository, you must add them to the staging area. To do that use `git add
-.`.
+Adding these files changed the working directory of our repository, we can use
+the `git add <file>` command to add these changes to the staging area. This
+is an area which tracks which changes to the working directory will be in the
+next commit. The staging area doesn't change the repository as these changes
+won't actually be recorded until you commit them.
 
-To check what you just did run `git status` again. You should see the
-following output
+To add your changes run `git add .`, this command adds all changes to files in
+the repository (but not deleted files). Now check the result by running
+`git status` again. You should see the following output:
 
 ```
 On branch master
