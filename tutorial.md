@@ -96,3 +96,47 @@ On branch master
 nothing to commit, working directory clean
 
 ```
+
+## Viewing History
+
+git log
+
+        (git log -n <limit>
+        (git log --oneline
+        (git log --stat
+        (git log -p
+        (git log --author"<pattern>"
+        (git log --grep="<pattern>")
+        (git log <since>..<until>)
+        (git log <file>)
+        (git log --graph --decorate --oneline)
+
+Make more changes
+
+```
+touch
+echo
+touch
+echo
+```
+
+git add -p
+
+Even more changes
+
+```
+mkdir 
+touch
+```
+
+## Remove change
+
+```
+git rm --cached <file>
+```
+
+```
+git commit -m "Lots of changes going on here"
+```
+
+git rm -r <dir>
