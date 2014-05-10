@@ -186,5 +186,22 @@ mkdir
 touch
 ```
 
+## Removing, Reverting, Resetting & Cleaning
 
+```
+git rm --cached <file>
+```
 
+```
+git commit -m "Lots of changes going on here"
+```
+
+git rm -r <dir>
+
+git commit --amend
+
+## Branches
+
+## Remote Repositories
+
+### Bare Repositories
