@@ -115,11 +115,7 @@ you run `git status` again you will see the following message.
 ```
 On branch master
 nothing to commit, working directory clean
-
 ```
-
-A commit is a snapshot of the local repository not difference. Every commit
-records the content of every file in every commit.
 
 ## Viewing History
 
