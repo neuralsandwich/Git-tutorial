@@ -24,3 +24,17 @@ Initialized empty Git repository in .git/
 There are many projects with already use git ([github](http://github.com)) to
 work on any of these you need to clone the project. You can do this with the
 `git clone <url>` command but for now we will move on and come back to this.
+
+## Checking the Status
+
+Now that the repository has been initialized we can check the status of the
+working directory and the staging area. Lets check the status now by using
+`git status`.
+
+```
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+```
