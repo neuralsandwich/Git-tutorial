@@ -4,7 +4,8 @@
 * [Checking Repository Status](#checking-the-status)
 * [Staging & Commiting](#adding-content--committing)
 * [History Log](#viewing-history)
-
+* [Removing Files & Mistakes](#removing-reverting-resetting--cleaning)
+* [Branching](#branches)
 
 ## Creating a New Project
 
