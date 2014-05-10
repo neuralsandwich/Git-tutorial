@@ -77,7 +77,10 @@ Adding these files changed the working directory of our repository, we can use
 the `git add <file>` command to add these changes to the staging area. This
 is an area which tracks which changes to the working directory will be in the
 next commit. The staging area doesn't change the repository as these changes
-won't actually be recorded until you commit them.
+won't actually be recorded until you commit them. This is one of Git's more
+unique features, it allows you to craft your commits splitting changes into
+relevant groups, instead of just saving all of your changes since the last
+commit.
 
 To add your changes run `git add .`, this command adds all changes to files in
 the repository (but not deleted files). Now check the result by running
@@ -96,12 +99,14 @@ Changes to be committed:
 
 ```
 
-Now that we have added some changes to the staging area, we can go ahead and
-create your first commit.
+`git add` can also be used to add directories in the same manner as files, it
+is simple `git add <directory>`.
 
-```
-git commit -m "Initial commit"
-```
+Now that you have some changes in the staging area, we can go ahead and create
+your first commit: `git commit -m "Initial commit"`. The `-m` tells `git commit`
+that you are giving it a message on the command line (without it this will open
+the default text editor set in your `.gitconfig`, but we will ignore this
+detail).
 
 Now our changes that were in the staging area have been stored as a commit. If
 you run `git status` again you will see the following message.
@@ -112,9 +117,10 @@ nothing to commit, working directory clean
 
 ```
 
+A commit is a snapshot of the local repository not difference. Every commit
+records the content of every file in every commit.
+
 ## Viewing History
-
-
 
 git log
 
