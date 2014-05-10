@@ -122,17 +122,19 @@ records the content of every file in every commit.
 
 ## Viewing History
 
-git log
+The `git log` command displays committed snapshots. Showing you the projects
+history.
 
-        (git log -n <limit>
-        (git log --oneline
-        (git log --stat
-        (git log -p
-        (git log --author"<pattern>"
-        (git log --grep="<pattern>")
-        (git log <since>..<until>)
-        (git log <file>)
-        (git log --graph --decorate --oneline)
+`git log`
+
+output
+
+```
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sat May 10 15:38:15 2014 +0100
+
+    Initial commit
+```
 
 Make more changes
 
@@ -145,6 +147,38 @@ echo
 
 git add -p
 
+git log, more history
+
+This ID can be used in commands like git log <since>..<until> to refer to
+specific commits. For instance, git log 3157e..5ab91 will display everything
+between the commits with ID's 3157e and 5ab91. Aside from checksums, branch
+names (discussed in the Branch Module) and the HEAD keyword are other common
+methods for referring to individual commits. HEAD always refers to the current
+commit, be it a branch or a specific commit.
+
+The ~ character is useful for making relative references to the parent of a
+commit. For example, 3157e~1 refers to the commit before 3157e, and HEAD~3 is
+the great-grandparent of the current commit.
+
+The idea behind all of these identification methods is to let you perform
+actions based on specific commits. The git log command is typically the
+starting point for these interactions, as it lets you find the commits you want
+to work with.
+
+Different git log formats
+
+```
+git log -n <limit>
+git log --oneline
+git log --stat
+git log -p
+git log --author"<pattern>"
+git log --grep="<pattern>"
+git log <since>..<until>
+git log <file>
+git log --graph --decorate --oneline
+```
+
 Even more changes
 
 ```
@@ -152,14 +186,5 @@ mkdir
 touch
 ```
 
-## Remove change
 
-```
-git rm --cached <file>
-```
 
-```
-git commit -m "Lots of changes going on here"
-```
-
-git rm -r <dir>
