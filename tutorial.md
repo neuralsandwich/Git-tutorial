@@ -1,9 +1,9 @@
 # Git Basics
 
-* [Creating Projects](#Creating a New Project)
-* [Checking Repository Status](#Checking the Status)
-* [Staging & Commiting](#Adding Content & Committing)
-* [History Log](#Viewing History)
+* [Creating Projects](#creating-a-new-project)
+* [Checking Repository Status](#checking-the-status)
+* [Staging & Commiting](#adding-content--committing)
+* [History Log](#viewing-history)
 
 
 ## Creating a New Project
