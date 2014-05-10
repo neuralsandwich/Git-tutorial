@@ -135,8 +135,8 @@ populated with more than one commit.
 
 ```
 echo "foobar" > foobar.txt
-echo " is not bar" >> foo.txt
-echo " is not foo" >> bar.txt
+echo "foo is not bar" > foo.txt
+echo "bar is not foo" > bar.txt
 ```
 
 Instead of using `git add .`, use `git add -p` You should be prompted with output
@@ -238,6 +238,14 @@ the commit before bff897c. For more information about `git log` visit [here]
 (http://git-scm.com/docs/git-log)
 
 ## Removing, Reverting, Resetting & Cleaning
+
+Now that we have some history in the repository, let's use it for what it is
+mean to do, store file versions safely. Run the following command `cat foo.txt`
+you should see 
+
+```
+foo is not bar
+```
 
 Even more changes
 
