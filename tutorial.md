@@ -473,5 +473,24 @@ command tells Git to change the URL of the remote connection origin to
 `../git-tutorial-basic.git` we need to do this so we can use the new bare
 repository as a remote connection.
 
+```
+git push -u origin master
+```
+
+This should produce similar output:
+
+```
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 359 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ../git-tutorial-basic.git
+   7a2bf50..cd10233  master -> master
+```
+
+`git push` send your commits to the remote repository. To get changes from the
+remote server you can use `git fetch` and getting the changes and applying them
+to the working directory you can use `git pull`
 
 ## Branches
