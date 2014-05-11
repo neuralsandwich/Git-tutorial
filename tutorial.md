@@ -117,6 +117,9 @@ On branch master
 nothing to commit, working directory clean
 ```
 
+If you make a mistake when writing a commit message use `git commit --amend`, this
+will allow you to edit the commit message.
+
 ## Viewing History
 
 All version control systems including Git show a projects commit history. The
@@ -269,7 +272,8 @@ git reset --hard HEAD
 ```
 
 Try a command out then run `git status` to confirm it has been restored to the
-latest version. Use `git checkout HEAD~2` to set `foo.txt` back to the first
+latest version (the second command will not full restore the file, the third
+command will). Use `git checkout HEAD~2` to set `foo.txt` back to the first
 version and try the next command. If `foo.txt` has been restored to the latest
 version you should see the following:
 
@@ -278,23 +282,48 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-### 
+The first command in the list, creates a `foo.txt` from the snapshot at HEAD,
+replacing the contents of the file. The second command resets any changes that
+were in the staging area for that file, all the changes are still present in
+the file. The last command will restore all tracked files in the staging area
+and the working directory to those in the HEAD commit.
+
+### Removing Changes & Files
 
 ```
-mkdir 
-touch
-git add
+echo "foobar is neither foo nor bar" > foobar.txt
+git add foobar.txt
+git status
 ```
+
+You should see
+
+```
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   foobar.txt
+```
+
+To remove this from the staging area
 
 `git rm --cached <file>`
 
 ```
-git commit -m "Lots of changes going on here"
+echo "foobar is neither foo nor bar" > foobar.txt
+git add foobar.txt
+git commit -m "Add changes to foobar"
 ```
 
+```
+git rm foobar
+git commit -m "Remove foobar"
+```
+The same can be done for 
 git rm -r <dir>
 
-git commit --amend
+
 
 ## Branches
 
