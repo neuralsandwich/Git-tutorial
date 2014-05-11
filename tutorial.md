@@ -467,4 +467,11 @@ cd git-tutorial-basic
 git remote set-url origin ../git-tutorial-basic.git
 ```
 
+When cloning the repository Git will also set a remote connection called origin
+This was set to pull from GitHub.com. `git remote set-url <name> <url>` This
+command tells Git to change the URL of the remote connection origin to
+`../git-tutorial-basic.git` we need to do this so we can use the new bare
+repository as a remote connection.
+
+
 ## Branches
