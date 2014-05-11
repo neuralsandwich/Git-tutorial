@@ -336,6 +336,60 @@ WARNING: Only do this on commits to your local repository. DO NOT do this
 when a commit has come from a remote repository, it LITTERALLY rewrites
 history.
 
+### Reverting
+
+The correct way to undo a commit is to use `git revert`. This command creates
+a commit which will undo the changes of a specified commit. Let's try it `git
+revert HEAD`, reverting HEAD (the lastest commit) should result in the
+following `git log`:
+
+```
+commit 5b4c1b41f75673407c6965466b9e7dbe96d074d4
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sun May 11 09:28:22 2014 +0100
+
+    Revert "removed foobar"
+    
+    This reverts commit d3840ad88286808062169c1a201316a00d85f880.
+
+commit d3840ad88286808062169c1a201316a00d85f880
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sun May 11 03:04:09 2014 +0100
+
+    removed foobar
+```
+
+We can see better what has happened by using `git log -p --oneline HEAD~2..HEAD`
+
+```
+5b4c1b4 Revert "removed foobar"
+diff --git a/foobar.txt b/foobar.txt
+new file mode 100644
+index 0000000..4768904
+--- /dev/null
++++ b/foobar.txt
+@@ -0,0 +1 @@
++foobar is neither foo nor bar
+
+<inserted space for clarity>
+
+d3840ad removed foobar
+diff --git a/foobar.txt b/foobar.txt
+deleted file mode 100644
+index 4768904..0000000
+--- a/foobar.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-foobar is neither foo nor bar
+
+```
+
+We can see in these diffs that `git revert HEAD` has create a commit that does the
+exact opposite of the previous commit, it has added `foobar.txt` back. This is the
+correct way to undo commits if they have been pushed to public projects.
+
+## Cloning & Remote Repositories
+
 ## Branches
 
 ## Remote Repositories
