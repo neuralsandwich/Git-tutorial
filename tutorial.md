@@ -527,3 +527,7 @@ branch has not been merged but you still wish to delete it use `git branch -D
 
 Switching between branch is as simple as calling `git checkout <name>` this will
 switch HEAD to the relevant snapshot.
+
+To learn more about branch visit the great interactive 
+[LearnGitBranching](http://pcottle.github.io/learnGitBranching/) tutorial by
+Peter M Cottle.
