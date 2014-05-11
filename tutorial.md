@@ -241,13 +241,44 @@ the commit before bff897c. For more information about `git log` visit [here]
 
 Now that we have some history in the repository, let's use it for what it is
 mean to do, store file versions safely. Run the following command `cat foo.txt`
-you should see 
+you should see:
 
 ```
 foo is not bar
 ```
 
-Even more changes
+If you wanted to use the original file, or just inspect what it contained you
+can run `git checkout HEAD~2 ` `foo.txt` is now in original state. Running `cat
+foo.txt` should yeild the original contents:
+
+```
+foo
+```
+
+`git status` will show that `foo.txt` has been modified compared to HEAD (the
+current commit).
+
+### Resetting
+
+To redo the changes made to `foo.txt` there are several options:
+
+```
+git checkout foo.txt
+git reset HEAD foo.txt
+git reset --hard HEAD
+```
+
+Try a command out then run `git status` to confirm it has been restored to the
+latest version. Use `git checkout HEAD~2` to set `foo.txt` back to the first
+version and try the next command. If `foo.txt` has been restored to the latest
+version you should see the following:
+
+```
+On branch master
+nothing to commit, working directory clean
+```
+
+### 
 
 ```
 mkdir 
