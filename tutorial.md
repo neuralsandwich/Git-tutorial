@@ -494,3 +494,25 @@ remote server you can use `git fetch` and getting the changes and applying them
 to the working directory you can use `git pull`
 
 ## Branches
+
++Git's more popular feature is its support of light weight branching. A branch is
++an abstract representation of an independent line of development. It allows you
++to make changes to your code, as if you were being given new working directory,
++staging area and project history. However you can instantly switch to others
++which may have other development in them.
+ 
+So far in this tutorial, you have been working exclusively one `master`, the
+default branch name. To create and switch to a new branch there is two methods:
+
+```
+git branch <name>
+git checkout <name>
+```
+
+Or.
+
+```
+git checkout -b <name>
+```
+
+Both of these create a new branch and switch the working directory to it.
