@@ -9,9 +9,11 @@
 
 ## Creating a New Project
 
-To get started using `git` you need to initial a repository. To do this you will
-need to run the `git init` command. For the purpose of this tutorial run the
-following commands in a bash shell or Git Bash on Windows.
+To start using Git first we need to be in a repository. We will initialize a new
+one, to do this we will need to run `git init`. To follow this tutorial, you
+will need to be in a terminal with Git installed or using the Windows Git Bash.
+
+To get started run the following commands:
 
 ```
 mkdir git-tutorial
