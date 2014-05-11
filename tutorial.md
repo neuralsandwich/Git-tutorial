@@ -395,10 +395,35 @@ The `git clone` command was previously mentioned in [Creating Projects]
 copies of repositories, either on your machine or remote locations.
 
 Let's try cloning the repository that has been used as an example throughout this
-tutorial. `git clone https://github.com/NeuralSandwich/git-tutorial-basic.git`
+tutorial.
 
-## Branches
+```
+cd ..
+git clone https://github.com/NeuralSandwich/git-tutorial-basic.git
+```
 
-## Remote Repositories
+Following output:
+
+```
+Cloning into 'git-tutorial-basic'...
+remote: Counting objects: 15, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 15 (delta 3), reused 15 (delta 3)
+Unpacking objects: 100% (15/15), done.
+Checking connectivity... done.
+
+```
+
+Congradulations, if you so the following output then you have successfully created
+a clone of the repository.
+
+Before the next section, we need to do some house keeping. Run the following
+commands:
+
+```
+Clean up commands
+```
 
 ### Bare Repositories
+
+## Branches
