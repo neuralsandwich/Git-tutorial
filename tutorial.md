@@ -21,8 +21,9 @@ cd git-tutorial
 git init
 ```
 
-You can also initialize projects using `git init <directory>`. In response to
-either of these commands you should see the following output from git
+You can also initialize projects using `git init <directory>`, this will create
+the git repository in the specified repository. Running either of the two
+commands should produce the following output from Git:
 
 ```
 Initialized empty Git repository in .git/
