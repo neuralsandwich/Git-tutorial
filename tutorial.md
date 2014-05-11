@@ -418,12 +418,7 @@ Congradulations, if you so the following output then you have successfully creat
 a clone of the repository.
 
 Before the next section, we need to do some house keeping. Run the following
-commands:
-
-```
-rm -rf git-tutorial
-cd git-tutorial-basic
-```
+command `rm -rf git-tutorial`:
 
 ### Bare Repositories
 
@@ -446,6 +441,30 @@ information from inside the `.git` directory. They are set out like this:
 5 directories, 4 files
 ```
 
+Since, you will not have access to push changes to the repository you just
+cloned, you need to create a local bare repository to use for the rest of the
+tutorial.
 
+```
+git clone --bare git-tutorial-basic
+```
+
+This should produce the following output:
+
+```
+Cloning into bare repository 'git-tutorial-basic.git'...
+done.
+```
+
+### Pushing & Pulling
+
+Let's go back to our repository and get it working with our bare repository. All
+of the following commands will work the same even if the repository was an
+actual remote repository. The only differene would be the URL to access it.
+
+```
+cd git-tutorial-basic
+git remote set-url origin ../git-tutorial-basic.git
+```
 
 ## Branches
