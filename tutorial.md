@@ -421,9 +421,31 @@ Before the next section, we need to do some house keeping. Run the following
 commands:
 
 ```
-Clean up commands
+rm -rf git-tutorial
+cd git-tutorial-basic
 ```
 
 ### Bare Repositories
+
+Remote repositories are normally stored as bare repositories. Bare repositories
+do not have working directories. These repositories just store all the
+information from inside the `.git` directory. They are set out like this:
+
+```
+.
+├── branches
+├── config
+├── description
+├── HEAD
+├── hooks
+├── info
+├── objects
+├── packed-refs
+└── refs
+
+5 directories, 4 files
+```
+
+
 
 ## Branches
