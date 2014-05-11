@@ -290,13 +290,17 @@ and the working directory to those in the HEAD commit.
 
 ### Removing Changes & Files
 
+When making changes to your files, occasionally you might want to remove the
+the change in the case where you added a mistake. Run the following commands:
+
 ```
 echo "foobar is neither foo nor bar" > foobar.txt
 git add foobar.txt
 git status
 ```
 
-You should see
+Now the change to `foobar.txt` has been added to the staging area, check with
+`git status` to confirm:
 
 ```
 On branch master
@@ -306,9 +310,10 @@ Changes to be committed:
 	modified:   foobar.txt
 ```
 
-To remove this from the staging area
+Now to remove this change to `foobar.txt` from the staging area, you can use
+`git rm --cached <file>` to remove changes to files from the staging area.
+To remove the change to `foobar.txt` run `git rm --cached foobar.txt`.
 
-`git rm --cached <file>`
 
 ```
 echo "foobar is neither foo nor bar" > foobar.txt
@@ -316,14 +321,20 @@ git add foobar.txt
 git commit -m "Add changes to foobar"
 ```
 
+Say removing `foobar.txt` was a mistake, we can reset the index of the
+repository, essentially rewinding history. Let's try it out:
+
 ```
-git rm foobar
+git rm foobar.txt
 git commit -m "Remove foobar"
 ```
-The same can be done for 
-git rm -r <dir>
 
+To rewind this commit we can run the following command `git reset HEAD~1`,
+this will reset the index to the previous commit.
 
+WARNING: Only do this on commits to your local repository. DO NOT do this
+when a commit has come from a remote repository, it LITTERALLY rewrites
+history.
 
 ## Branches
 
