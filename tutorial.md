@@ -390,6 +390,13 @@ correct way to undo commits if they have been pushed to public projects.
 
 ## Cloning & Remote Repositories
 
+The `git clone` command was previously mentioned in [Creating Projects]
+(#creating-a-new-project). The `git clone <url>` command can be used to create exact
+copies of repositories, either on your machine or remote locations.
+
+Let's try cloning the repository that has been used as an example throughout this
+tutorial. `git clone https://github.com/NeuralSandwich/git-tutorial-basic.git`
+
 ## Branches
 
 ## Remote Repositories
