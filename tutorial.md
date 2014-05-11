@@ -516,3 +516,14 @@ git checkout -b <name>
 ```
 
 Both of these create a new branch and switch the working directory to it.
+Creating branches for specific tasks such as bug fixes, adding features and
+refactoring code are common practise. It allows several lines of development to
+be carried out in parrallel without conflict.
+
+Once a line of development is complete, it should be merged into the appropriate
+branch and then deleted. This can be done using `git branch -d <name>` if a
+branch has not been merged but you still wish to delete it use `git branch -D
+<name>`
+
+Switching between branch is as simple as calling `git checkout <name>` this will
+switch HEAD to the relevant snapshot.
