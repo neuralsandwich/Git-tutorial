@@ -159,7 +159,7 @@ index 5716ca5..02626e7 100644
 @@ -1 +1,2 @@
  bar
 + is not foo
-Stage this hunk [y,n,q,a,d,/,e,?]? 
+Stage this hunk [y,n,q,a,d,/,e,?]?
 ```
 
 Enter `y` and then `git commit -m "Add changes to foo & bar"`, finally do the
@@ -317,8 +317,8 @@ Changes to be committed:
 ```
 
 Now to remove this change to `foobar.txt` from the staging area, you can use
-`git rm --cached <file>` to remove changes to files from the staging area.
-To remove the change to `foobar.txt` run `git rm --cached foobar.txt`.
+`git reset HEAD <file>` to remove changes to files from the staging area.
+To remove the change to `foobar.txt` run `git reset HEAD foobar.txt`.
 
 
 ```
@@ -355,7 +355,7 @@ Author: Sean Jones <neuralsandwich@gmail.com>
 Date:   Sun May 11 09:28:22 2014 +0100
 
     Revert "removed foobar"
-    
+
     This reverts commit d3840ad88286808062169c1a201316a00d85f880.
 
 commit d3840ad88286808062169c1a201316a00d85f880
