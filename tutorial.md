@@ -7,6 +7,9 @@
 * [Removing Files & Mistakes](#removing-reverting-resetting--cleaning)
 * [Branching](#branches)
 
+## Advanced Topics
+* [Rewriting History](#rebasing)
+
 ## Creating a New Project
 
 To start using Git first we need to be in a repository. We will initialize a new
@@ -534,3 +537,113 @@ switch HEAD to the relevant snapshot.
 To learn more about branch visit the great interactive 
 [LearnGitBranching](http://pcottle.github.io/learnGitBranching/) tutorial by
 Peter M Cottle.
+
+# Advanced Git
+
+## Rebasing
+
+Git rebasing, it a very powerful tool. It can be be used to rewrite your
+repositories history, for better or worse. `git rebase` does this by copying
+commits from a branch and copying them to new base commit.
+
+![Git Rebasing Image](https://gp1.wac.edgecastcdn.net/8029C4/wac-small/wac/landing/git/tutorial/rewriting-git-history/pageSections/00/contentFullWidth/0/tabs/01/pageSections/0/contentFullWidth/00/imageBinary/git-tutorial_rebase.png)
+
+Let's `git rebase <base>` to understand how it works.
+
+```
+cd ../
+git clone https://github.com/NeuralSandwich/git-tutorial-rebasing.git
+cd git-tutorial-rebasing
+```
+
+If you run `git log` you will see that this repository has an extra commit on
+the master branch compare to the last repository
+
+```
+commit f172eb1d904be0621d4152f2bdde0b5d89433152
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Mon May 12 07:48:38 2014 +0100
+
+    Add barfoo.txt
+
+commit 7a2bf50939c737a2bb5fa47d2a2763b692adda79
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sun May 11 09:48:50 2014 +0100
+
+    Remove foobar
+```
+
+By running `git branch -v` we can see there is more than one branch.
+
+```
+  bring-back-foobar b24dcb0 Revert "Remove foobar"
+* master            f172eb1 Add barfoo.txt
+
+```
+
+It appears both have different tip commits. `git log bring-back-foobar` reveals
+that the history is also different between these branchs:
+
+```
+commit b24dcb0b0da31ba7cfe84dde0298b35f0e0213d4
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Mon May 12 08:02:25 2014 +0100
+
+    Revert "Remove foobar"
+    
+    This reverts commit 7a2bf50939c737a2bb5fa47d2a2763b692adda79.
+
+commit 7a2bf50939c737a2bb5fa47d2a2763b692adda79
+Author: Sean Jones <neuralsandwich@gmail.com>
+Date:   Sun May 11 09:48:50 2014 +0100
+
+    Remove foobar
+
+```
+
+If we wanted to merge `bring-back-foobar` into master, we would end up with a
+non-linear history. `git log --graph --oneline`
+
+```
+*   fcfb589 Merge branch 'bring-back-foobar'
+|\  
+| * b24dcb0 Revert "Remove foobar"
+* | f172eb1 Add barfoo.txt
+|/  
+* 7a2bf50 Remove foobar
+* fff6840 Add changes to foobar
+* 2042f6c Add foobar.txt
+* 9085b36 Add changes to foo & bar
+* 2f7907c Initial commit
+```
+
+While this in itself is not a bad thing, for the trivial
+change that this branch brings, it doesn't need to introduce a mess into the
+history. Let's fix this so when we do merge, we can get a nice linear history.
+
+```
+git co bring-back-foobar
+git rebase master
+```
+
+Now if we look at the history of this branch we will see a nice linear series of
+commits. `git log --graph --oneline`
+
+```
+* da75a4c Revert "Remove foobar"
+* f172eb1 Add barfoo.txt
+* 7a2bf50 Remove foobar
+* fff6840 Add changes to foobar
+* 2042f6c Add foobar.txt
+* 9085b36 Add changes to foo & bar
+* 2f7907c Initial commit
+```
+
+Now if we merge bring-back-foobar into master, it will fast-forward and create
+the nice linear history we can see above.
+
+And that is rebasing, for more challenging uses try out the great interactive 
+[LearnGitBranching](http://pcottle.github.io/learnGitBranching/) tutorial by
+Peter M Cottle. It contains exercises in rebasing, branching and merging that
+will help you better understand the process.
+
