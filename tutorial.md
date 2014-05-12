@@ -37,9 +37,9 @@ repository. You can do this with `git clone <url>` but for now we will move on.
 
 ## Checking the Status
 
-Now that the repository has been initialized we can check the status of the
-working directory and the staging area. Lets check the status now by using
-`git status`.
+Now that we have initialized the repository, we can check the status of the
+repository. If you ever wish to see the state of the working directory or
+staging area just run `git status`, let's do this now.
 
 ```
 On branch master
