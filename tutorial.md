@@ -31,9 +31,9 @@ Initialized empty Git repository in .git/
 
 ## Copying Projects
 
-There are many projects with already use git ([github](http://github.com)) to
-work on any of these you need to clone the project. You can do this with the
-`git clone <url>` command but for now we will move on.
+Many open source projects already use git ([github](http://github.com)). To work
+on any of them you need to clone the project, which creates a copy of the
+repository. You can do this with `git clone <url>` but for now we will move on.
 
 ## Checking the Status
 
